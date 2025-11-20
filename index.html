@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع RP للاعبين</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000; /* أسود */
+            color: #fff; /* أبيض للنصوص */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #b22222; /* أحمر داكن */
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            width: 100px; /* حجم الشعار */
+            height: auto;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333; /* رمادي داكن */
+            border-radius: 10px;
+            box-shadow: 0 0 10px #b22222; /* ظل أحمر */
+        }
+        h1, h2 {
+            color: #ffd700; /* ذهبي للعناوين */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea, button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #b22222;
+            border-radius: 5px;
+            background-color: #222;
+            color: #fff;
+        }
+        button {
+            background-color: #b22222;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff4500; /* أحمر فاتح */
+        }
+        .rp-questions {
+            margin-top: 20px;
+        }
+        .question {
+            background-color: #444;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 5px solid #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="شعار الموقع" class="logo"> <!-- استبدل بصورة الشعار الحقيقية -->
+        <h1>موقع RP للاعبين</h1>
+        <p>أنشئ قصصك وشخصياتك وشارك في الأسئلة التفاعلية!</p>
+    </header>
 
+    <div class="container">
+        <h2>إنشاء شخصية جديدة</h2>
+        <form id="character-form">
+            <label for="name">اسم الشخصية:</label>
+            <input type="text" id="name" required>
+
+            <label for="background">خلفية الشخصية:</label>
+            <textarea id="background" rows="4" required></textarea>
+
+            <label for="skills">مهارات الشخصية:</label>
+            <input type="text" id="skills" placeholder="مثال: قتال، سحر">
+
+            <button type="submit">إنشاء الشخصية</button>
+        </form>
+
+        <h2>قصة RP</h2>
+        <textarea id="story" rows="6" placeholder="اكتب قصتك هنا..."></textarea>
+        <button onclick="saveStory()">حفظ القصة</button>
+
+        <div class="rp-questions">
+            <h2>أسئلة RP تفاعلية</h2>
+            <div class="question">
+                <p>سؤال: ما هي رد فعل شخصيتك إذا واجهت تنينًا؟</p>
+                <textarea placeholder="أجب كشخصيتك..."></textarea>
+            </div>
+            <div class="question">
+                <p>سؤال: كيف ستتعامل مع خيانة صديق؟</p>
+                <textarea placeholder="أجب كشخصيتك..."></textarea>
+            </div>
+            <!-- يمكن إضافة المزيد ديناميكيًا بـ JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        // مثال بسيط للحفظ (في الواقع، استخدم قاعدة بيانات)
+        function saveStory() {
+            const story = document.getElementById('story').value;
+            alert('تم حفظ القصة: ' + story);
+        }
+
+        document.getElementById('character-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert('تم إنشاء الشخصية: ' + name);
+        });
+    </script>
+</body>
+</html>
